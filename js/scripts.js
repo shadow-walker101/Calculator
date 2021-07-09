@@ -17,6 +17,12 @@ let divide = (number1, number2) => {
     return number1 / number2;
 };
 
-let number1 = parseInt(prompt("Enter a number:"));
-let number2 = parseInt(prompt("Enter another number:"));
-alert(add(number1, number2));
+$(document).ready(() => {
+    $("form#add").submit((event) => {
+        event.preventDefault();
+        let number1 = parseInt($("#add1").val());
+        let number2 = parseInt($("#add2").val());
+        let result = add(number1, number2);
+        $("#output").text(result);
+    });
+});
